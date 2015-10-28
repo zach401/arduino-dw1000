@@ -25,7 +25,7 @@
 DW1000Class DW1000;
 
 /* ###########################################################################
- * #### Static member variables ##############################################
+ * #### Static member var iables ##############################################
  * ######################################################################### */
 
 // pins
@@ -54,7 +54,7 @@ byte DW1000Class::_pulseFrequency = TX_PULSE_FREQ_16MHZ;
 byte DW1000Class::_dataRate = TRX_RATE_6800KBPS;
 byte DW1000Class::_preambleLength = TX_PREAMBLE_LEN_128;
 byte DW1000Class::_preambleCode = PREAMBLE_CODE_16MHZ_4;
-byte DW1000Class::_channel = CHANNEL_5;
+byte DW1000Class::_channel = CHANNEL_2;
 DW1000Time DW1000Class::_antennaDelay;
 boolean DW1000Class::_smartPower = false;
 boolean DW1000Class::_frameCheck = true;
@@ -1090,7 +1090,7 @@ void DW1000Class::setDefaults() {
 		useSmartPower(false);
 		suppressFrameCheck(false);
         //for global frame filtering
-		setFrameFilter(true);
+		setFrameFilter(false);
         //for data frame (poll, poll_ack, range, range report, range failed) filtering
         setFrameFilterAllowData(true);
         //for reserved (blink) frame filtering
